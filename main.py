@@ -7,13 +7,12 @@ time_list: list = [0 for _ in range(10)]
 
 
 def useful_work(i):
-    print(threading.current_thread())
-    print(f'Выполняется полезная работа... \n Время работы {time_list[i]}')
+    print(f'Выполняется полезная работа... \n Время работы {time_list[i]}, поток {threading.current_thread().name}')
     sleep(time_list[i])
-    print('Полезная работа выполнена.')
+    print(f'Полезная работа выполнена. {threading.current_thread().name}')
 
 
-list_threads: list = [[random.randint(1, 10), 0, Thread(target=useful_work, args=(i,))] for i in range(10)]
+list_threads: list = [[random.randint(1, 10), 0, Thread(target=useful_work, args=(i,), name=str(i))] for i in range(10)]
 # возможное исключение list_threads = [[1, 0], [4, 0], [4, 0], [4, 0], [4, 0], [4, 0], [4, 0], [4, 0], [9, 0], [9, 0]]
 list_threads.sort(key=lambda x: x[1])
 print(list_threads)
