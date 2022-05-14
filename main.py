@@ -69,7 +69,7 @@ def processing_data() -> None:
 
 while True:
     time_list: list = [0 for _ in range(10)]
-    list_threads: list = [[random.randint(1, 10), 0, Thread(target=useful_work, args=(i,),
+    list_threads: list = [[5, 0, Thread(target=useful_work, args=(i,),
                                                             name=str(i))] for i in range(10)]
     # возможное исключение list_threads = [[1, 0], [4, 0], [4, 0], [4, 0], [4, 0], [4, 0], [4, 0], [4, 0], [9, 0], [9, 0]]
     list_threads.sort(key=lambda x: x[1])
@@ -112,3 +112,4 @@ while True:
             break
 
     print(list_threads, 'нормальное время')
+    sleep(5)
