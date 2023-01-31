@@ -1,0 +1,10 @@
+нахождение элемента по тегу и смена класса
+
+const changeBackground = () => {
+        let bodyElt = document.querySelector('html')
+        bodyElt.className = theme === 'light' ? 'bg-light' :  'bg-dark';
+        return <></>
+    }
+    
+=========================================================================    
+    
