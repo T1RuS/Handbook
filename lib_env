@@ -1,0 +1,10 @@
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+TEST_ENV = os.getenv('TEST_ENV')
+
+print(TEST_ENV)
+# pip install python-dotenv
+# filename .env TEST_ENV="test env"
